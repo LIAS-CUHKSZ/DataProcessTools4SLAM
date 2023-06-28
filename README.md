@@ -1,4 +1,4 @@
-# Convert2Rosbag
+# Data processing tools for SLAM
 Collection of some useful tools to generate rosbags from raw data, especially for NCLT dataset. 
 
 1. <merge_rosbag.py> Merge multiple rosbags into one rosbag. You can select to merge all the topics of some of the topics.
