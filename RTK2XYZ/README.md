@@ -32,17 +32,18 @@ $ rostopic echo -b ./src/nmea_msgs/rs_mid_xs_2023-5-17-15-58-43.bag -p /nmea_sen
 
 using the [python script](./rtk2xyz.py).
 
-and the [jupyter notebook](./rtk2xyz.ipynb) may be helpful if you want to test or read the code.
+and the [jupyter notebook file](./rtk2xyz.ipynb) may be helpful if you want to test or read the code.
 
 ```bash
 pip install pandas
 pip install pyproj
-pip install numpy
-ipython
+pip install numpy (optional)
+cd RTK2XYZ
+python -i rtk2xyz.py
 ```
 ```python
-from rtk2xyz import *
-rtk2xyz(['longitude','latitude'],'input.csv', 'output.csv')
+>>> rtk2xyz(['longitude','latitude','altitude'],'input.csv', 'output.csv')
+>>> quit()
 ```
 
 Parameters:
@@ -53,6 +54,7 @@ Parameters:
     must include the following labels:
     - longitude
     - latitude
+    - altitude
 
 - **input_csv**
 - **output_csv**

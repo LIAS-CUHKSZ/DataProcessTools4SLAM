@@ -1,7 +1,10 @@
 from pyproj import CRS
 from pyproj import Transformer
 import pandas as pd
-import numpy as np
+try:
+    import numpy as np
+except:
+    print("You can install numpy to improve the accuracy of the result.")
 
 def rtk2xyz(header, input_csv, output_csv, epsg = 32650, flag = False, base = []):
     """[RTK].csv to [XYZ].csv
