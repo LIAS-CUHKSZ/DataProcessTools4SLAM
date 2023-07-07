@@ -332,6 +332,8 @@ def write_vel(f_vel,bag):
             i = struct.unpack('B', f_vel.read(1))[0]
             l = struct.unpack('B', f_vel.read(1))[0]
     data=[]
+
+
     while True:
         # a = f_vel.read(size-3)
         magic = f_vel.read(8)
@@ -412,7 +414,10 @@ def write_vel(f_vel,bag):
                     PointField('ring', 20, PointField.UINT16, 1)]
             pcl_msg = pcl2.create_cloud(header, fields, data)
             pcl_msg.is_dense = True
-            bag.write("points_raw", pcl_msg, t=pcl_msg.header.stamp)
+
+
+            timestamp = rospy.Time.from_sec(utime/1e6)
+            bag.write("points_raw", pcl_msg, t=timestamp)
             last_time = utime
             data=[]
 
@@ -510,7 +515,7 @@ def main(args):
     #     else:
     #         print("Unknown packet type")
 
-    f_vel.close()
+    # f_vel.close()
     # f_hok_30.close()
     # f_hok_4.close()
     bag.close()
