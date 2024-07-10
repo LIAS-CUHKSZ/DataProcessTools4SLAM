@@ -6,7 +6,8 @@ Collection of some useful tools to generate rosbags from raw data, especially fo
 3. <convert_image2rosbag.py> Convert raw images to rosbag. The timestamps are the name of .bin files.
 4. </.RTK2XYZ> Convert RTK csv/rosbag to XYZ csv with multiple options.
 5. <vel2pclrosbag.py> Convert Lidar bin (velodyne) to rosbag, topic type pointcloud2. 
-
+6. <csv2rosbag.py>  convert the csv file to rosbag
+7. <merge_easier.py> A script to merge the different rosbag only need the path/to/rosbag/file  
 Other materials and references:
 - http://zhaoxuhui.top/blog/2022/06/15/ros-bag-from-various-data-files.html#1%e5%b0%86%e5%bd%b1%e5%83%8f%e5%ba%8f%e5%88%97%e8%bd%ac%e6%8d%a2%e6%88%90bag%e6%96%87%e4%bb%b6
 - FastLio:   https://github.com/hku-mars/FAST_LIO
